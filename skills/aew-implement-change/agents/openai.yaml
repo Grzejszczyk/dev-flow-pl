@@ -1,0 +1,3 @@
+interface:
+  display_name: "Implementacja zmiany"
+  short_description: "Wykonaj zmianę i sprawdź jej rezultat"

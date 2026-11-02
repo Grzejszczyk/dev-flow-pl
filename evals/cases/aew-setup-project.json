@@ -1,0 +1,31 @@
+{
+  "skill": "aew-setup-project",
+  "triggers": {
+    "positive": [
+      "Przeanalizuj adaptację dev-flow w tym projekcie.",
+      "Przygotuj profil istniejącego projektu."
+    ],
+    "negative": [
+      "Wyjaśnij funkcję accepts.",
+      "Zrób review konkretnego diffu."
+    ]
+  },
+  "cases": [
+    {
+      "id": "setup-existing-rules",
+      "prompt": "Przeanalizuj adaptację dev-flow do tego repozytorium. Na razie bez edycji.",
+      "fixture": "project",
+      "setup": "Zapisz bazę i dopisz do README.md niezwiązaną notatkę użytkownika bez commitu.",
+      "expected": [
+        "Propozycja uwzględnia istniejący AGENTS.md i komendy.",
+        "Nieznane SHA przyjętego standardu oznaczone jako niewiadome."
+      ],
+      "forbidden": [
+        "Nadpisanie instrukcji, zmian użytkownika lub deklaracja instalacji."
+      ],
+      "evidence": [
+        "Odczyty reguł, status/diff przed i po, raport."
+      ]
+    }
+  ]
+}

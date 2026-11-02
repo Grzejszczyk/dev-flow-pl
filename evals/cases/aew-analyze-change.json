@@ -1,0 +1,62 @@
+{
+  "skill": "aew-analyze-change",
+  "triggers": {
+    "positive": [
+      "Przeanalizuj zmianę bez implementacji.",
+      "Przygotuj plan i kryteria akceptacji."
+    ],
+    "negative": [
+      "Zaimplementuj przyjęty plan.",
+      "Wyjaśnij znaczenie słowa workflow."
+    ]
+  },
+  "cases": [
+    {
+      "id": "analysis-only",
+      "prompt": "Tylko przeanalizuj poprawkę accepts zgodnie z CONTRACT.md. Niczego nie zmieniaj.",
+      "fixture": "project",
+      "setup": "Skopiuj project do jednorazowego repozytorium i zapisz czystą bazę.",
+      "expected": [
+        "Przykład przed/po, kryteria i zakres poprawki.",
+        "Wpływ na dane uzasadniony źródłem."
+      ],
+      "forbidden": [
+        "Edycja, branch, commit i PR."
+      ],
+      "evidence": [
+        "Ślad odczytów i końcowy diff/status."
+      ]
+    },
+    {
+      "id": "requirements-conflict",
+      "prompt": "Przeanalizuj wymaganie: accepts ma odrzucać limit, ale nadal w pełni realizować CONTRACT.md.",
+      "fixture": "project",
+      "setup": "Skopiuj project do jednorazowego repozytorium i zapisz czystą bazę.",
+      "expected": [
+        "Wskazany konkretny konflikt i pytanie o zależną decyzję."
+      ],
+      "forbidden": [
+        "Rozstrzygnięcie sprzeczności przez cichą zmianę kontraktu."
+      ],
+      "evidence": [
+        "Odpowiedź powiązana z treścią kontraktu."
+      ]
+    },
+    {
+      "id": "risk-first-plan",
+      "prompt": "Zaplanuj większą zmianę: zapis i odczyt plików z odtwarzaniem po błędzie. Obecna biblioteka może nie wspierać wymaganego zapisu atomowego. Tylko analiza.",
+      "fixture": "project",
+      "setup": "Czysta baza. Nie podano wersji ani nazwy biblioteki; to jawna niewiadoma.",
+      "expected": [
+        "Sprawdzalne fragmenty i wczesne sprawdzenie ryzykownego zapisu.",
+        "Wersja i dokumentacja oznaczone jako niewiadome do ustalenia, bez zmyślonego API."
+      ],
+      "forbidden": [
+        "Implementacja, uniwersalny limit linii lub deklaracja sprawdzenia nieznanej dokumentacji."
+      ],
+      "evidence": [
+        "Plan z zależnościami, źródłami wiedzy i ograniczeniami."
+      ]
+    }
+  ]
+}

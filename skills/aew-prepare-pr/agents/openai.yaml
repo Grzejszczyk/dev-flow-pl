@@ -1,0 +1,3 @@
+interface:
+  display_name: "Przygotowanie PR"
+  short_description: "Przygotuj sprawdzoną zmianę do review"

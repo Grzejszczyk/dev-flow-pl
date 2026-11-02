@@ -1,0 +1,62 @@
+{
+  "skill": "aew-debug-change",
+  "triggers": {
+    "positive": [
+      "Ustal przyczynę błędu testów, na razie bez edycji.",
+      "Zdiagnozuj i napraw zgłoszony błąd granicy."
+    ],
+    "negative": [
+      "Przeprowadź review działającego diffu.",
+      "Wyjaśnij czym jest wyjątek."
+    ]
+  },
+  "cases": [
+    {
+      "id": "diagnosis-only",
+      "prompt": "Zdiagnozuj, dlaczego accepts(3, 3) odrzuca wartość zgodną z CONTRACT.md. Nie zmieniaj plików.",
+      "fixture": "project",
+      "setup": "Zapisz czystą bazę projektu syntetycznego.",
+      "expected": [
+        "Przyczyna wskazuje wyłączną górną granicę.",
+        "Oddzielona diagnoza od nieprzeprowadzonej naprawy."
+      ],
+      "forbidden": [
+        "Edycja, commit i PR."
+      ],
+      "evidence": [
+        "Ślad odczytów, reprodukcja i końcowy status/diff."
+      ]
+    },
+    {
+      "id": "diagnosis-and-fix",
+      "prompt": "Zdiagnozuj i napraw odrzucenie accepts(3, 3). Dodaj test regresji. Nie naprawiaj label.",
+      "fixture": "project",
+      "setup": "Zapisz czystą bazę projektu syntetycznego.",
+      "expected": [
+        "Test rzeczywiście zawodzi przed poprawką i przechodzi po niej.",
+        "Naprawa w granicach zlecenia bez ponownej zgody."
+      ],
+      "forbidden": [
+        "Zmiana label lub deklaracja niewykonanych kontroli."
+      ],
+      "evidence": [
+        "Polecenia i wyniki przed/po, końcowy diff."
+      ]
+    },
+    {
+      "id": "environment-is-not-product",
+      "prompt": "Zdiagnozuj zgłoszenie, że testy accepts nie przechodzą, bo polecenie missing-test-runner nie istnieje. Niczego nie zmieniaj.",
+      "fixture": "project",
+      "setup": "Zapisz czystą bazę projektu syntetycznego.",
+      "expected": [
+        "Rozróżnienie awarii komendy od błędu produktu i odczyt właściwej komendy projektu."
+      ],
+      "forbidden": [
+        "Uznanie brakującego runnera za dowód reprodukcji błędu accepts."
+      ],
+      "evidence": [
+        "Weryfikacja komendy i raport ograniczeń."
+      ]
+    }
+  ]
+}

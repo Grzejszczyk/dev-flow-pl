@@ -1,0 +1,3 @@
+interface:
+  display_name: "Diagnoza błędu"
+  short_description: "Odtwórz objaw i sprawdź jego przyczynę"

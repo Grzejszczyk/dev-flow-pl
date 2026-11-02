@@ -1,0 +1,111 @@
+{
+  "skill": "aew-review-change",
+  "triggers": {
+    "positive": [
+      "Zrób review tych dwóch commitów.",
+      "Sprawdź diff względem wymagań bez edycji."
+    ],
+    "negative": [
+      "Napraw błąd i dodaj test.",
+      "Napisz sam komunikat commitu."
+    ]
+  },
+  "cases": [
+    {
+      "id": "review-fixed-version",
+      "prompt": "Przejrzyj zmianę label na prefiks entry: względem CONTRACT.md. Raportuj nowe i stare usterki oddzielnie; nie edytuj.",
+      "fixture": "project",
+      "setup": "Zapisz bazę. Zmień label na return f'entry:{value}' i zapisz commit końcowy.",
+      "expected": [
+        "Nowa niezgodność prefiksu oraz osobno stara granica accepts.",
+        "Wskazana baza i koniec zmiany."
+      ],
+      "forbidden": [
+        "Edycja lub publikacja komentarza."
+      ],
+      "evidence": [
+        "SHA i diff obu wersji, odczyt kontraktu i raport."
+      ]
+    },
+    {
+      "id": "review-new-old-and-guard",
+      "prompt": "Porównaj before.py z after.py według CONTRACT.md. Tylko review.",
+      "fixture": "review",
+      "setup": "Zapisz wszystkie dostarczone snapshoty w czystym jednorazowym repozytorium. Zanotuj SHA i tożsamość plików; bazą porównania jest before.py.",
+      "expected": [
+        "Jedna nowa regresja: count równy limitowi jest odrzucony.",
+        "Brak prefiksu oznaczony jako stara usterka, jeśli raportowany.",
+        "Brak fałszywego zarzutu autoryzacji; uwzględnione serve."
+      ],
+      "forbidden": [
+        "Edycja plików i zarzut obejścia autoryzacji wykluczony przez caller."
+      ],
+      "evidence": [
+        "Ślad odczytu obu snapshotów, kontraktu, guarda oraz końcowy diff."
+      ]
+    },
+    {
+      "id": "review-zero-new-defects",
+      "prompt": "Porównaj before.py z clean.py. Oddziel nowe i istniejące usterki. Nie edytuj.",
+      "fixture": "review",
+      "setup": "Zapisz wszystkie dostarczone snapshoty w czystym jednorazowym repozytorium. Zanotuj SHA i tożsamość plików; bazą porównania jest before.py.",
+      "expected": [
+        "Zero potwierdzonych nowych usterek.",
+        "Stara usterka prefiksu nie jest regresją tej zmiany."
+      ],
+      "forbidden": [
+        "Wymyślona usterka blokująca review."
+      ],
+      "evidence": [
+        "Porównanie obu wersji i niezmienione pliki."
+      ]
+    },
+    {
+      "id": "review-deduplicate-candidates",
+      "prompt": "Sprawdź hipotezy wobec before.py i after.py: A accepts odrzuca limit; B serve odrzuca pełną dozwoloną liczbę; C każdy aktor może wywołać serve; D brakuje prefiksu. Tylko review.",
+      "fixture": "review",
+      "setup": "Zapisz wszystkie dostarczone snapshoty w czystym jednorazowym repozytorium. Zanotuj SHA i tożsamość plików; bazą porównania jest before.py.",
+      "expected": [
+        "A i B to jedno nowe ustalenie.",
+        "C odrzucone przez guard; D istnieje w bazie."
+      ],
+      "forbidden": [
+        "Przyjęcie hipotez bez odczytu źródeł lub zdublowanie regresji."
+      ],
+      "evidence": [
+        "Odczyty źródeł i raport przypisujący hipotezy do dowodów."
+      ]
+    },
+    {
+      "id": "weakened-test-review",
+      "prompt": "Sprawdź wyłącznie czy zmiana testów zachowuje kontrolę kontraktu. Nie poprawiaj kodu.",
+      "fixture": "project",
+      "setup": "Zapisz bazę. W test_negative_rejected usuń asercję i zastąp ją pass. Zapisz commit końcowy.",
+      "expected": [
+        "Raport wyjaśnia utratę kontroli przy usunięciu asercji."
+      ],
+      "forbidden": [
+        "Uznanie zielonego testu za dowód zachowania bez analizy."
+      ],
+      "evidence": [
+        "Diff starego i nowego testu oraz odniesienie do kontraktu."
+      ]
+    },
+    {
+      "id": "review-target-repository",
+      "prompt": "Przeprowadź review before.py względem after.py według CONTRACT.md w repozytorium wskazanym pełną ścieżką przez prowadzącego. Nie zmieniaj plików.",
+      "fixture": "review",
+      "setup": "Skopiuj review do osobnego repozytorium. Rozpocznij sesję w innym repozytorium i w poleceniu wskaż bezwzględny katalog kopii. Zapisz oba SHA poza kontekstem agenta.",
+      "expected": [
+        "Raport identyfikuje repozytorium z badanymi plikami i jego SHA, nie SHA startowego checkoutu.",
+        "Ograniczenia narzędzi nie są zastępowane metadanymi obcego repozytorium."
+      ],
+      "forbidden": [
+        "Przypisanie SHA repozytorium startowego do badanych źródeł."
+      ],
+      "evidence": [
+        "Polecenie ustalające Git root i SHA wskazanego repozytorium, hashe snapshotów, status/diff."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Analiza zmiany"
+  short_description: "Ustal zakres, kryteria i wpływ zmiany"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Review zmiany"
+  short_description: "Oceń konkretny diff na podstawie dowodów"

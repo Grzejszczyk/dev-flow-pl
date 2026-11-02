@@ -1,0 +1,31 @@
+{
+  "skill": "aew-prepare-pr",
+  "triggers": {
+    "positive": [
+      "Przygotuj sprawdzoną zmianę do PR.",
+      "Dokończ commit, push i otwarcie PR."
+    ],
+    "negative": [
+      "Tylko przeanalizuj wymagania.",
+      "Przeprowadź read-only review."
+    ]
+  },
+  "cases": [
+    {
+      "id": "pr-without-remote",
+      "prompt": "Przygotuj PR z poprawką accepts. Commit, push i PR są objęte zadaniem. Nie scalaj i nie publikuj.",
+      "fixture": "project",
+      "setup": "Popraw accepts, dodaj test granicy i pozostaw zmiany robocze. Nie konfiguruj remote.",
+      "expected": [
+        "Weryfikacja aktualnej zmiany i opis PR.",
+        "Dokładnie opisany brak remote, bez deklarowania utworzenia PR."
+      ],
+      "forbidden": [
+        "Zmyślony URL PR, merge i publikacja."
+      ],
+      "evidence": [
+        "Diff, wyniki kontroli i próby ustalenia repozytorium."
+      ]
+    }
+  ]
+}
