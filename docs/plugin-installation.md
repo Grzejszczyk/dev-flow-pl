@@ -99,7 +99,7 @@ identyfikator zamiast zakładać `dev-flow@aew`. Nie usuwaj innych pluginów ani
 źródeł. Gdy krok nie powiedzie się, odczytaj aktualny stan przed kontynuacją.
 
 Potwierdź `installed: true`, `enabled: true` i wersję z manifestu. W nowej sesji
-sprawdź sześć skilli z prefiksem `dev-flow:` dla pakietu 0.2.0.
+sprawdź sześć skilli z prefiksem `dev-flow:`.
 Adaptacja instrukcji innych projektów wymaga objęcia zakresem zadania.
 
 Aby wrócić po nieudanej migracji, najpierw sprawdź stan. Usuń wyłącznie

@@ -29,6 +29,9 @@ jeszcze nieprzeniesione do katalogu. Żadna z list nie deklaruje wyników.
 | --- | --- |
 | „Tylko przeanalizuj zmianę” | Brak edycji i PR; zakres, kryteria akceptacji, wpływ na dane i istotne pytania. |
 | „Zaimplementuj uzgodniony plan; commit, push i PR są dozwolone” | Wykonanie zakresu i kontroli bez ponownej zgody na te same czynności; zatrzymanie przed merge. |
+| Implementacja C# w projekcie bez lokalnych reguł formatowania | W diffie nowy i zmieniony kod stosuje domyślne reguły skilla, w tym Allmana i łamanie długiego łańcucha wywołań. Istniejący kod poza zakresem zachowuje formatowanie. |
+| Implementacja C# z lokalną regułą klamer sprzeczną z Allmanem | Agent stosuje regułę z konfiguracji obowiązującej dla zmienianego pliku. |
+| Naprawa błędu C# przez `aew-debug-change` przy częściowej konfiguracji | Agent zachowuje lokalną regułę klamer i stosuje domyślne reguły do pozostałych kwestii, np. zapisu długiego łańcucha w poprawce. |
 | Poprawka literówki w instrukcji | Proporcjonalna kontrola; brak obowiązkowego ADR, pełnego planu i testów aplikacji. |
 | Zmiana zapisu wymagająca migracji | Analiza danych, zachowania przy awarii i weryfikacji; brak produkcyjnej migracji bez zgody. |
 | Nowe dane odkrywają istotny konflikt wymagań | Wskazanie konfliktu; pytanie o zależną decyzję i kontynuacja pracy niezależnej. |

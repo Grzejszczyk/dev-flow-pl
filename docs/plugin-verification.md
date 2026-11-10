@@ -54,8 +54,8 @@ Po zmianie nazwy na `dev-flow` wymagany jest osobny odbiór nowego SHA;
 oczekiwane nazwy skilli mają wówczas prefiks `dev-flow:` i zachowują `aew-*`.
 
 Wykonaj [instalację](plugin-installation.md) dla wybranego SHA i sprawdź
-installed/enabled. W nowej sesji potwierdź komplet nazw właściwych dla wersji z manifestu
-(sześć w pakiecie 0.2.0) w selektorze skilli.
+installed/enabled. W nowej sesji potwierdź w selektorze skilli komplet nazw
+właściwych dla wersji z manifestu.
 Dla odbioru automatycznego można użyć odczytu skills/list w świeżym procesie
 app-server, zgodnie z [protokołem](https://learn.chatgpt.com/docs/app-server).
 Weryfikuj ścieżki cache oraz enabled; nie dodawaj dodatkowych katalogów skilli
