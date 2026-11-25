@@ -28,7 +28,9 @@ Testy kontraktu są częścią python -m unittest discover -s tests -v.
 3. Zapisz pełny SHA źródeł skilla, model, host i jego wersję, system,
    dostępne narzędzia, ograniczenia oraz sposób udostępnienia skilla.
    Dla niecommitowanych instrukcji zachowaj dokładny diff i sumy plików.
-4. Dla zachowania udostępnij agentowi badany SKILL.md oraz prompt przypadku.
+4. W próbie zachowania udostępnij cały katalog skilla w badanej wersji. Podaj agentowi ścieżkę
+   do jego pliku `SKILL.md` oraz prompt przypadku. Agent doczytuje powiązane
+   pliki z tego katalogu, gdy wymaga ich zadanie.
    W kontrakcie opisz wymagania produktu. Diagnozę i klasyfikację usterki
    pozostaw oceniającemu wraz z expected, forbidden i evidence. Zachowaj
    zakres uprawnień określony w poleceniu.
