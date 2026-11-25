@@ -1,0 +1,60 @@
+{
+  "skill": "aew-plan-change",
+  "triggers": {
+    "positive": [
+      "Przygotuj plan implementacji na podstawie naszej rozmowy.",
+      "Tak, zapisz zaproponowany plan."
+    ],
+    "negative": [
+      "Przeanalizuj zakres zmiany.",
+      "Zaimplementuj uzgodniony plan."
+    ]
+  },
+  "cases": [
+    {
+      "id": "plan-after-analysis",
+      "prompt": "Tak, przygotuj plan.",
+      "fixture": "project",
+      "setup": "Po analizie poprawki accepts agent zaproponował plik docs/plans/accepts-limit.md. Użytkownik potwierdził zgodność z CONTRACT.md.",
+      "expected": [
+        "Plan w zaproponowanym pliku, z kolejnością prac i kontrolą wartości granicznych."
+      ],
+      "forbidden": [
+        "Ponowne pytanie o zapis lub zmiana kodu."
+      ],
+      "evidence": [
+        "Treść rozmowy i porównanie plików z bazą."
+      ]
+    },
+    {
+      "id": "plan-in-chat",
+      "prompt": "Przeanalizuj poprawkę accepts zgodnie z kontraktem i przygotuj plan tylko w czacie.",
+      "fixture": "project",
+      "setup": "Czysta kopia projektu.",
+      "expected": [
+        "Analiza i plan w odpowiedzi bez ponownej zgody."
+      ],
+      "forbidden": [
+        "Zapis planu lub implementacja."
+      ],
+      "evidence": [
+        "Treść rozmowy i porównanie plików z bazą."
+      ]
+    },
+    {
+      "id": "plan-clarification",
+      "prompt": "Zaplanuj odrzucanie limitu przy zachowaniu zgodności z kontraktem.",
+      "fixture": "project",
+      "setup": "Po pytaniu agenta właściciel wybiera zachowanie z CONTRACT.md.",
+      "expected": [
+        "Pytanie z przykładem wartości granicznej i rekomendacją z uzasadnieniem. Plan po odpowiedzi respektuje wybór."
+      ],
+      "forbidden": [
+        "Przedstawienie rekomendacji jako decyzji właściciela."
+      ],
+      "evidence": [
+        "Treść rozmowy i porównanie plików z bazą."
+      ]
+    }
+  ]
+}

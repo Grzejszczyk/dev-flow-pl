@@ -23,9 +23,10 @@ jest ograniczeniem, nie wynikiem pozytywnym.
 | Etap | Wynik umożliwiający przejście dalej |
 | --- | --- |
 | Cel i zakres | Problem, oczekiwany rezultat, granice i obserwowalne kryteria akceptacji. |
-| Analiza i porozumienie | Istotne decyzje rozstrzygnięte; znane zależności, wpływ na dane i migracje. Implementacja objęta zgodą. |
+| Analiza i porozumienie | Istotne decyzje rozstrzygnięte; znane zależności, wpływ na dane i migracje. |
+| Plan implementacji (opcjonalny) | Kroki, zależności i kontrole wynikające z uzgodnień. Domyślnie plik Markdown w repozytorium, na życzenie plan tylko w czacie. |
 | Utrwalenie decyzji | Przyjęte ustalenia zapisane w odpowiednim miejscu; ADR tylko dla trwałej decyzji. |
-| Implementacja | Spójny zakres kodu, testów i aktualnej dokumentacji, bez zmian przypadkowych. |
+| Implementacja | Zgoda na realizację. Spójny zakres kodu, testów i aktualnej dokumentacji, bez zmian przypadkowych. |
 | Weryfikacja i self-review | Proporcjonalne kontrole wykonane; wynik i braki odniesione do kryteriów akceptacji. |
 | PR i review | Konkretna wersja zmiany sprawdzona; uwagi poprawione albo jawnie rozstrzygnięte. |
 | Merge | Zgoda właściciela na aktualną zmianę, wymagane kontrole i squash zgodnie z profilem. |

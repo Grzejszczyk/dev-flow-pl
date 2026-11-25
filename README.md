@@ -22,7 +22,7 @@ W sesji Claude Code (od wersji 2.1.275) wpisz:
 ```
 
 [Instrukcja dla Claude Code](docs/claude-code.md) opisuje instalację z GitHuba,
-sprawdzenie sześciu skilli oraz użycie zasad projektu z `AGENTS.md`.
+sprawdzenie siedmiu skilli oraz użycie zasad projektu z `AGENTS.md`.
 Claude Code i Codex korzystają z tych samych plików w `skills/`.
 
 ## Instalacja i aktualizacja w PowerShell
@@ -139,7 +139,7 @@ i otwórz nowe okno PowerShella.
 | [AGENTS.md](AGENTS.md) | Zasady rozwijania tego repozytorium. |
 | [docs/](docs/) | Wspólny proces, uprawnienia, adopcja, weryfikacja i pilotaż. |
 | [templates/](templates/) | Materiały do dostosowania do projektu i zadania. |
-| [skills/](skills/) | Sześć samodzielnych procedur dla agentów, z metadanymi Codex. |
+| [skills/](skills/) | Siedem samodzielnych procedur dla agentów, z metadanymi Codex. |
 | [plugin.json](plugin.json) | Tożsamość, wersja i opis instalowalnego pakietu. |
 | [Marketplace](.agents/plugins/marketplace.json) | Katalog aew wskazujący ten pakiet. |
 | [scripts/validate.py](scripts/validate.py) | Lokalna kontrola struktury, skilli, pakietu i linków. |
@@ -150,6 +150,7 @@ i otwórz nowe okno PowerShella.
 | --- | --- |
 | [aew-setup-project](skills/aew-setup-project/SKILL.md) | Przygotowanie lub zatwierdzona adaptacja standardu do projektu. |
 | [aew-analyze-change](skills/aew-analyze-change/SKILL.md) | Analiza zmiany przed implementacją. |
+| [aew-plan-change](skills/aew-plan-change/SKILL.md) | Plan implementacji z ustaleń rozmowy, w repozytorium lub tylko w czacie. |
 | [aew-implement-change](skills/aew-implement-change/SKILL.md) | Realizacja uzgodnionego zakresu i proporcjonalna weryfikacja. |
 | [aew-debug-change](skills/aew-debug-change/SKILL.md) | Diagnoza błędu i naprawa wyłącznie w zleconym zakresie. |
 | [aew-review-change](skills/aew-review-change/SKILL.md) | Przegląd ustalonej wersji diffu i wymagań. |

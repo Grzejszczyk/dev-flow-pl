@@ -29,6 +29,9 @@ jeszcze nieprzeniesione do katalogu. Żadna z list nie deklaruje wyników.
 | --- | --- |
 | „Tylko przeanalizuj zmianę” | Brak edycji i PR; zakres, kryteria akceptacji, wpływ na dane i istotne pytania. |
 | „Zaimplementuj uzgodniony plan; commit, push i PR są dozwolone” | Wykonanie zakresu i kontroli bez ponownej zgody na te same czynności; zatrzymanie przed merge. |
+| Po analizie użytkownik przyjmuje propozycję planu | Agent wskazał konkretny plik Markdown. Po odpowiedzi „tak” zapisuje tam plan z krokami i kontrolami. |
+| „Przeanalizuj i przygotuj plan tylko w czacie” | Plan w odpowiedzi bez kolejnego pytania o zgodę i bez edycji plików. |
+| Dwie interpretacje prowadzą do różnych wyników | Agent ilustruje różnicę przykładem i uzasadnia rekomendowaną odpowiedź. Po decyzji uwzględnia ją w planie. |
 | Implementacja C# w projekcie bez lokalnych reguł formatowania | W diffie nowy i zmieniony kod stosuje domyślne reguły skilla, w tym Allmana i łamanie długiego łańcucha wywołań. Istniejący kod poza zakresem zachowuje formatowanie. |
 | Implementacja C# z lokalną regułą klamer sprzeczną z Allmanem | Agent stosuje regułę z konfiguracji obowiązującej dla zmienianego pliku. |
 | Naprawa błędu C# przez `aew-debug-change` przy częściowej konfiguracji | Agent zachowuje lokalną regułę klamer i stosuje domyślne reguły do pozostałych kwestii, np. zapisu długiego łańcucha w poprawce. |

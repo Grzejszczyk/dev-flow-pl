@@ -4,7 +4,7 @@ Dla Claude Code zobacz [osobną instrukcję instalacji](claude-code.md).
 
 Plugin: `dev-flow`. Marketplace: `aew`.
 Wersja pakietu: [plugin.json](../plugin.json).
-Pakiet udostępnia sześć skilli, bez serwera MCP, konektorów i hooków.
+Pakiet udostępnia siedem skilli, bez serwera MCP, konektorów i hooków.
 
 Wymagany klient obsługujący pluginy i dostęp do repozytorium GitHub.
 Przed rozpoczęciem sprawdź `codex --version`
@@ -103,7 +103,7 @@ identyfikator zamiast zakładać `dev-flow@aew`. Nie usuwaj innych pluginów ani
 źródeł. Gdy krok nie powiedzie się, odczytaj aktualny stan przed kontynuacją.
 
 Potwierdź `installed: true`, `enabled: true` i wersję z manifestu. W nowej sesji
-sprawdź sześć skilli z prefiksem `dev-flow:`.
+sprawdź siedem skilli z prefiksem `dev-flow:`.
 Adaptacja instrukcji innych projektów wymaga objęcia zakresem zadania.
 
 Po przerwaniu migracji sprawdź ponownie obie listy. Jeśli źródło `aew`
