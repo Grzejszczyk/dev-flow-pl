@@ -84,7 +84,7 @@ class EvaluationTests(unittest.TestCase):
         try:
             link.symlink_to(self.root / "skills", target_is_directory=True)
         except (OSError, NotImplementedError):
-            self.skipTest("Tworzenie dowiązań niedostępne; przypadek wykonywany także w CI Linux.")
+            self.skipTest("Tworzenie dowiązań symbolicznych niedostępne w tym środowisku.")
         self.assertTrue(any("poza katalog" in error for error in self.check()))
 
 

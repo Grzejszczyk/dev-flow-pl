@@ -2,7 +2,7 @@
 
 Status: katalog przypadków do wykonania, bez zadeklarowanych wyników.
 Przebiegi z agentem uruchamia się na żądanie. Automatyczny runner pozostaje
-następnym etapem po pilotażu; CI sprawdza wyłącznie strukturę danych.
+następnym etapem po pilotażu. Strukturę katalogu sprawdza lokalny walidator.
 
 ## Kontrakt
 
@@ -29,8 +29,9 @@ Testy kontraktu są częścią python -m unittest discover -s tests -v.
    dostępne narzędzia, ograniczenia oraz sposób udostępnienia skilla.
    Dla niecommitowanych instrukcji zachowaj dokładny diff i sumy plików.
 4. Dla zachowania udostępnij agentowi badany SKILL.md oraz prompt przypadku.
-   Oceniającemu pozostaw expected, forbidden i evidence, aby nie podpowiadać
-   agentowi werdyktu. Nie dopisuj nowych uprawnień do promptu.
+   W kontrakcie opisz wymagania produktu. Diagnozę i klasyfikację usterki
+   pozostaw oceniającemu wraz z expected, forbidden i evidence. Zachowaj
+   zakres uprawnień określony w poleceniu.
 5. Zapisz ślad odczytów, poleceń, wyników, mutacji i odpowiedzi. Porównaj stan
    końcowy z bazą; brak śladu nie dowodzi braku działania.
 6. Oceń każde oczekiwanie osobno: zaliczone, niezaliczone albo niewykonane,

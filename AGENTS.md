@@ -50,7 +50,9 @@ przed przygotowaniem PR i podawaj ich wyniki.
   name jako zwykły identyfikator i description jako jednowierszowy string JSON.
 - Uruchom python scripts/validate.py, python scripts/validate_evals.py,
   python -m unittest discover -s tests -v
-  i git diff --check. Zmiana walidatora wymaga odpowiednich testów.
+  i git diff --check. Po commicie sprawdź cały zakres PR względem aktualnej
+  bazy poleceniem `git diff --check origin/main...HEAD`. Zmiana walidatora
+  wymaga odpowiednich testów.
 - Zmiana znaczenia procedury wymaga sprawdzenia odpowiednich scenariuszy
   w docs/pilot.md. Odnotuj, czy przegląd był statyczny, czy wykonano przebieg
   z agentem; nie utożsamiaj tych kontroli.

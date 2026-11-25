@@ -68,10 +68,12 @@ Walidator sprawdza także manifest i lokalny katalog marketplace: spójność na
 wersję, wymagane metadane, bezpieczną ścieżkę pakietu i zakres bez MCP/hooków.
 To kontrola kontraktów tego repozytorium, a nie pełna walidacja schematu pluginów.
 Testy obejmują także uszkodzony JSON, błędne powiązanie pakietu i wyjście poza katalog.
-CI wykonuje te same kontrole i `git diff --check`.
 Dodatkowo `python scripts/validate_evals.py` sprawdza kontrakt katalogu
 [ewaluacji](../evals/README.md), identyfikatory, pokrycie skilli pakietami
 oraz ścieżki danych. Nie uruchamia agenta i nie ocenia rezultatów.
+
+Polecenia lokalne oraz zakres diffu dla gotowego PR podaje
+[README](../README.md#weryfikacja-repozytorium).
 
 Kontrole struktury i statyczny przegląd scenariuszy nie zastępują pilotażu
 z agentem. Sposób oceny zachowania opisuje [pilot](pilot.md).

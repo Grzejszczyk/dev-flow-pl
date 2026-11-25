@@ -26,9 +26,12 @@ Dostarcz zmianę gotową do oceny przez właściciela.
    projekt wymaga draftu. Nie ukrywaj niespełnionych kontroli.
 6. Po utworzeniu odczytaj stan i URL PR. Sprawdź kontrole aktualnej wersji,
    jeśli środowisko je udostępnia; brak checków opisz jako brak.
-7. Zatrzymaj się przed merge, jeśli nie został autoryzowany. Gdy zgoda na merge
-   już obejmuje aktualną zmianę, wykonaj lokalną procedurę i potwierdź rezultat.
-   Zgoda na PR lub merge nie jest zgodą na publikację produkcyjną.
+7. Merge wymaga zgody właściciela na aktualną zmianę. Przed scaleniem ustal
+   w konfiguracji projektu, czy uruchomi ono automatyczne wdrożenie. Jeśli tak,
+   ustal na podstawie polecenia lub uzgodnionego profilu projektu, czy zgoda
+   obejmuje także wdrożenie na docelowe środowisko. Jeśli jej brakuje, wstrzymaj
+   merge i wskaż jego skutek. Po autoryzowanym scaleniu potwierdź wynik.
+   Osobna publikacja produkcyjna również wymaga zgody.
 
 ## Wynik
 
