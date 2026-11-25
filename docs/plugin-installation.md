@@ -5,7 +5,7 @@ Wersja pakietu: [plugin.json](../plugin.json).
 Pakiet udostępnia sześć skilli, bez serwera MCP, konektorów i hooków.
 
 Wymagany klient obsługujący pluginy i dostęp do repozytorium GitHub.
-Dopóki repozytorium jest prywatne, potrzebne jest działające uwierzytelnienie Git. Przed rozpoczęciem sprawdź `codex --version`
+Przed rozpoczęciem sprawdź `codex --version`
 oraz `codex plugin add --help`. Rozszerzenie IDE nie obsługuje pluginów według
 dokumentacji sprawdzonej 2026-10-29.
 
@@ -32,7 +32,7 @@ Pierwsza komenda rejestruje źródło i pobiera konkretną wersję marketplace.
 Druga potwierdza widoczność pakietu, trzecia instaluje i włącza go dla użytkownika.
 Lista po instalacji powinna potwierdzić `installed: true` i `enabled: true`.
 Pakiet nie wymaga osobnego logowania do usługi; pole `ON_INSTALL` jest
-wymaganą metadaną katalogu, a repozytorium prywatne nadal wymaga dostępu Git.
+wymaganą metadaną katalogu.
 
 Nie dodawaj tokenu do URL ani plików konfiguracyjnych tego repozytorium.
 Jeśli pobranie nie działa, sprawdź dostęp do repozytorium i konfigurację Git.
@@ -79,8 +79,10 @@ Dwa źródła o identyfikatorze `aew` nie są w tej procedurze używane równocz
 
 W ramach zleconej migracji odczytaj `codex plugin list --marketplace aew --json`
 oraz `codex plugin marketplace list --json`. Potwierdź, że źródło `aew`
-udostępnia wyłącznie ten plugin. Zapisz poprzedni adres źródła, pełny SHA
-i identyfikator zainstalowanego pluginu na potrzeby powrotu.
+udostępnia wyłącznie ten plugin. Sprawdź identyfikator zainstalowanego pluginu.
+Przed usunięciem dotychczasowej instalacji otwórz wybrany commit publicznego
+`Grzejszczyk/dev-flow-pl` na GitHubie i potwierdź obecność manifestu pluginu
+oraz marketplace. Do polecenia poniżej skopiuj pełny SHA tego commitu.
 
 Dla istniejącej instalacji `dev-flow@aew` wykonaj kolejno, zastępując znacznik
 sprawdzonym SHA z `dev-flow-pl`:
@@ -102,10 +104,12 @@ Potwierdź `installed: true`, `enabled: true` i wersję z manifestu. W nowej ses
 sprawdź sześć skilli z prefiksem `dev-flow:`.
 Adaptacja instrukcji innych projektów wymaga objęcia zakresem zadania.
 
-Aby wrócić po nieudanej migracji, najpierw sprawdź stan. Usuń wyłącznie
-częściowo dodaną instalację i jej źródło, następnie ponownie dodaj zapisany
-poprzedni adres z jego SHA oraz zainstaluj zapisany identyfikator pluginu.
-Starego SHA nie używaj z adresem nowego repozytorium. Nie usuwaj całego cache.
+Po przerwaniu migracji sprawdź ponownie obie listy. Jeśli źródło `aew`
+zostało już usunięte, wznów od dodania publicznego repozytorium ze sprawdzonym
+SHA. Jeśli `aew` już wskazuje ten publiczny commit, sprawdź dostępność pakietu
+i zainstaluj go, o ile instalacja jeszcze się nie zakończyła. Jeśli nadal
+wskazuje stare źródło, dokończ jego usuwanie po sprawdzeniu stanu pluginu.
+Na końcu zweryfikuj instalację i dostępność skilli zgodnie z opisem powyżej.
 
 ## Aktualizacja i usunięcie
 
