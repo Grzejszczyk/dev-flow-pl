@@ -1,5 +1,7 @@
 # Instalacja pluginu w Codex
 
+Dla Claude Code zobacz [osobną instrukcję instalacji](claude-code.md).
+
 Plugin: `dev-flow`. Marketplace: `aew`.
 Wersja pakietu: [plugin.json](../plugin.json).
 Pakiet udostępnia sześć skilli, bez serwera MCP, konektorów i hooków.
