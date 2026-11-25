@@ -214,7 +214,7 @@ class SkillBoundaryTests(unittest.TestCase):
         try:
             (self.folder / "outside.md").symlink_to(self.root / "docs/workflow.md")
         except (OSError, NotImplementedError):
-            self.skipTest("Brak uprawnień do dowiązań; kontrola także w CI Linux.")
+            self.skipTest("Tworzenie dowiązań symbolicznych niedostępne w tym środowisku.")
         self.assertTrue(any("escapes skill" in error for error in skill_errors(self.folder)))
 
 

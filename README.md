@@ -192,7 +192,8 @@ git diff --check
 ```
 
 W tym repozytorium nie skonfigurowano GitHub Actions. Powyższe kontrole
-uruchamiaj lokalnie i podawaj ich wyniki przy przygotowaniu PR.
+uruchamiaj lokalnie. Po commicie sprawdź cały zakres PR poleceniem
+`git diff --check origin/main...HEAD` względem aktualnej bazy i podaj wyniki w PR.
 
 Walidacja struktury nie potwierdza skuteczności workflow ani zachowania modelu.
 Katalog przypadków i przebiegi na żądanie opisuje [ewaluacja](evals/README.md),

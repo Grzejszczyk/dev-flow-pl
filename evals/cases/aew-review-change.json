@@ -13,9 +13,9 @@
   "cases": [
     {
       "id": "review-fixed-version",
-      "prompt": "Przejrzyj zmianę label na prefiks entry: względem CONTRACT.md. Raportuj nowe i stare usterki oddzielnie; nie edytuj.",
+      "prompt": "Porównaj HEAD^ z HEAD pod kątem wymagań z CONTRACT.md. Raportuj nowe i stare usterki oddzielnie; nie edytuj.",
       "fixture": "project",
-      "setup": "Zapisz bazę. Zmień label na return f'entry:{value}' i zapisz commit końcowy.",
+      "setup": "Ustaw label na return f'item:{value}' i zapisz bazę. Następnie zmień label na return f'entry:{value}' i zapisz commit końcowy.",
       "expected": [
         "Nowa niezgodność prefiksu oraz osobno stara granica accepts.",
         "Wskazana baza i koniec zmiany."
