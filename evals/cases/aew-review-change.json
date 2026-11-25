@@ -13,7 +13,7 @@
   "cases": [
     {
       "id": "review-fixed-version",
-      "prompt": "Porównaj HEAD^ z HEAD. Przejrzyj zmianę funkcji label względem CONTRACT.md. Raportuj nowe i stare usterki oddzielnie; nie edytuj.",
+      "prompt": "Porównaj HEAD^ z HEAD pod kątem wymagań z CONTRACT.md. Raportuj nowe i stare usterki oddzielnie; nie edytuj.",
       "fixture": "project",
       "setup": "Ustaw label na return f'item:{value}' i zapisz bazę. Następnie zmień label na return f'entry:{value}' i zapisz commit końcowy.",
       "expected": [
