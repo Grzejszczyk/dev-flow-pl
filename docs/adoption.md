@@ -41,7 +41,10 @@ Przykładowe polecenie po udostępnieniu skilla:
 
 ## Dystrybucja jako plugin
 
-Repozytorium zawiera [manifest](../plugin.json) i [marketplace aew](../.agents/plugins/marketplace.json).
+Dla Claude Code użyj [instalacji i importu zasad projektu](claude-code.md).
+Oba klienty czytają te same pliki `skills/aew-*/SKILL.md`.
+
+Dla Codex repozytorium zawiera [manifest](../plugin.json) i [marketplace aew](../.agents/plugins/marketplace.json).
 Plugin korzysta bezpośrednio z skills/; nie utrzymujemy drugiej kopii procedur.
 Instalację i aktualizację z przypiętego commitu opisuje
 [instrukcja](plugin-installation.md).

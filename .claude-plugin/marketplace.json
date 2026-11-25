@@ -1,0 +1,14 @@
+{
+  "name": "aew",
+  "description": "Polskie instrukcje współpracy z agentami przy tworzeniu oprogramowania.",
+  "owner": {
+    "name": "Łukasz Grzejszczyk"
+  },
+  "plugins": [
+    {
+      "name": "dev-flow",
+      "source": "./",
+      "description": "Sześć wspólnych procedur pracy nad zmianą oprogramowania."
+    }
+  ]
+}

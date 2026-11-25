@@ -13,7 +13,21 @@ nazwę `dev-flow`, marketplace identyfikator `aew`, a skille prefiks `aew-`.
 Zmianę źródła istniejącej instalacji opisuje
 [instrukcja](docs/plugin-installation.md#zmiana-źródła-marketplace).
 
+## Instalacja w Claude Code
+
+W sesji Claude Code (od wersji 2.1.275) wpisz:
+
+```text
+/plugin install dev-flow --marketplace Grzejszczyk/dev-flow-pl
+```
+
+[Instrukcja dla Claude Code](docs/claude-code.md) opisuje instalację z GitHuba,
+sprawdzenie sześciu skilli oraz użycie zasad projektu z `AGENTS.md`.
+Claude Code i Codex korzystają z tych samych plików w `skills/`.
+
 ## Instalacja i aktualizacja w PowerShell
+
+Poniższe polecenia dotyczą Codex.
 
 Wymagane są Codex CLI obsługujący pluginy, Git oraz dostęp do tego repozytorium.
 Jeśli repozytorium jest prywatne, potrzebne jest także uwierzytelnienie Git.
