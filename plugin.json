@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dev-flow",
-  "version": "0.2.1",
-  "description": "Wspólny proces pracy człowieka i AI: analiza, implementacja, diagnoza, review i przygotowanie PR.",
+  "version": "0.3.0",
+  "description": "Wspólny proces pracy człowieka i AI: analiza, planowanie, implementacja, diagnoza, review i przygotowanie PR.",
   "author": {
     "name": "Łukasz Grzejszczyk",
     "url": "https://github.com/Grzejszczyk"
@@ -13,7 +13,7 @@
       "interface": {
         "displayName": "dev-flow",
         "shortDescription": "Od uzgodnienia zmiany do sprawdzonego PR",
-        "longDescription": "Sześć skilli wspierających adaptację standardu, analizę, implementację, diagnozę, review i przygotowanie PR. Lokalne instrukcje projektu określają komendy oraz zakres zgód.",
+        "longDescription": "Siedem skilli wspierających adaptację standardu, analizę, planowanie, implementację, diagnozę, review i przygotowanie PR. Lokalne instrukcje projektu określają komendy oraz zakres zgód.",
         "developerName": "Łukasz Grzejszczyk",
         "category": "Productivity"
       }

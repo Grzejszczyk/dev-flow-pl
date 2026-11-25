@@ -22,7 +22,7 @@ commitu zawierającego katalog Claude. Jeśli masz już marketplace o nazwie
 
 Otwórz nową sesję Claude Code w projekcie docelowym lub wykonaj
 `/reload-plugins` w otwartej sesji. Wpisz `/dev-flow:` i sprawdź, czy
-podpowiedzi obejmują sześć [skilli](../README.md#skille). Przykładowe użycie:
+podpowiedzi obejmują siedem [skilli](../README.md#skille). Przykładowe użycie:
 
 ```text
 /dev-flow:aew-analyze-change Przeanalizuj zmianę opisaną w tym issue. Na razie tylko analiza.

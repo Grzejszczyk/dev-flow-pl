@@ -32,6 +32,16 @@ Skill analityczny sam nie udziela zgody na edycję.
    commitów ani PR. Jeśli w zadaniu już jednoznacznie zlecono realizację,
    nie żądaj ponownej zgody wyłącznie dlatego, że wykonano analizę.
 
+9. Po zakończeniu analizy i wyjaśnieniu istotnych pytań zaproponuj
+   przygotowanie planu. Dobierz konkretną ścieżkę pliku .md do tematu
+   i konwencji repozytorium. Przykład:
+   „Czy mam przygotować plan implementacji? Jeśli tak, zapiszę go w pliku
+   `docs/plans/import-validation.md`. Mogę też zostawić plan tylko w czacie.”
+   Odpowiedź „tak” obejmuje zapis we wskazanym miejscu. Jeśli użytkownik już
+   zlecił plan, podaj miejsce i przejdź do planowania bez ponownego pytania.
+   Uszanuj wcześniejszy wybór czatu. Przy zleconej implementacji osobny plan
+   pozostaje opcjonalny.
+
 ## Wynik
 
 Krótka analiza z kryteriami akceptacji, wpływem na dane, uzasadnionym kierunkiem
