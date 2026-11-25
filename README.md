@@ -202,7 +202,7 @@ uruchamiaj lokalnie. Po commicie sprawdź cały zakres PR poleceniem
 Zachowanie agenta sprawdza się osobno. [Instrukcja ewaluacji](evals/README.md)
 opisuje przypadki i sposób przeprowadzenia prób.
 [Raport z pilotażu z 2 listopada 2026](docs/pilot-2026-11-02.md) dokumentuje
-próby przeprowadzone w poprzednim repozytorium.
+próby wcześniejszej wersji standardu w jednorazowych repozytoriach testowych.
 
 ## Źródła techniczne
 
