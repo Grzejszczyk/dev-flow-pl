@@ -3,15 +3,26 @@
 Wspólny standard współpracy człowieka i agentów AI: od ustalenia celu do
 sprawdzenia działającej zmiany po publikacji.
 
-**Status: standard v0.2 do pilotażu.** Repozytorium zawiera źródła oraz pakiet
-pluginu do instalacji z własnego marketplace. Wersję i SHA sprawdzaj przed
-instalacją; obecność manifestu nie zastępuje odbioru ani pilotażu.
-Język materiałów: polski. Nazwy plików i skilli: angielskie.
+**Standard jest w fazie pilotażu.** Wersję pluginu podaje [manifest pakietu](plugin.json).
+Przed instalacją sprawdź wersję i SHA wybranego commitu.
 
-Repozytorium `dev-flow-pl` udostępnia polskie instrukcje. Plugin zachowuje
-nazwę `dev-flow`, marketplace identyfikator `aew`, a skille prefiks `aew-`.
+Instrukcje są po polsku, a nazwy plików i skilli po angielsku. Plugin
+nazywa się `dev-flow`, marketplace ma identyfikator `aew`, a nazwy skilli zaczynają się od `aew-`.
 Zmianę źródła istniejącej instalacji opisuje
 [instrukcja](docs/plugin-installation.md#zmiana-źródła-marketplace).
+
+## Zacznij tutaj
+
+- [Instalacja w Codex przez PowerShell](#instalacja-i-aktualizacja-w-powershell)
+- [Instalacja w Claude Code](#instalacja-w-claude-code)
+- [Wdrożenie standardu we własnym projekcie](docs/adoption.md) jest opcjonalne.
+  Jeśli je wybierasz, zapisz w [profilu projektu](templates/project-profile.md) pełny SHA
+  standardu i reguły swojego repozytorium. Weź pod uwagę [przebieg pracy](docs/workflow.md)
+  i [zakres uprawnień](docs/authorization.md).
+
+W pierwszym [pilotażu](docs/pilot.md) możesz wypróbować standard na małej poprawce,
+funkcji z testami i zmianie wymagającej analizy migracji. Oceń wyniki według
+[zasad weryfikacji](docs/verification.md).
 
 ## Instalacja w Claude Code
 
@@ -69,14 +80,24 @@ pluginów. Zapisz poprzedni adres źródła i pełny SHA, aby móc wrócić do i
 Poniższe polecenia zastępują źródło wersją z `Grzejszczyk/dev-flow-pl`:
 
 ```powershell
-codex plugin remove dev-flow@aew
-codex plugin marketplace remove aew
-codex plugin marketplace add Grzejszczyk/dev-flow-pl --ref main
-codex plugin add dev-flow@aew
-codex plugin list --marketplace aew --json
+& {
+    $ErrorActionPreference = 'Stop'
+    function Invoke-CodexStep {
+        codex @args
+        if ($LASTEXITCODE -ne 0) {
+            throw "Polecenie 'codex $args' zwróciło kod $LASTEXITCODE."
+        }
+    }
+
+    Invoke-CodexStep plugin remove dev-flow@aew
+    Invoke-CodexStep plugin marketplace remove aew
+    Invoke-CodexStep plugin marketplace add Grzejszczyk/dev-flow-pl --ref main
+    Invoke-CodexStep plugin add dev-flow@aew
+    Invoke-CodexStep plugin list --marketplace aew --json
+}
 ```
 
-Jeśli krok zakończy się błędem, sprawdź stan przed kontynuacją.
+Po błędzie blok zatrzyma się. Sprawdź listę źródeł i stan pluginu, zanim wznowisz aktualizację.
 Na końcu potwierdź wersję zgodną z [manifestem](plugin.json),
 `installed: true` i `enabled: true`. Rozpocznij nowy chat; jeśli aplikacja
 nadal pokazuje stare skille, uruchom ją ponownie.
@@ -122,16 +143,6 @@ Zastąp przykładową ścieżkę własną. Jeśli CLI nie jest zainstalowany, sk
 z [oficjalnej instrukcji instalacji Codex CLI](https://learn.chatgpt.com/docs/cli)
 i otwórz nowe okno PowerShella.
 
-## Zacznij tutaj
-
-1. Aby używać pluginu w Codex, wykonaj [instalację](docs/plugin-installation.md).
-   Przy adaptacji projektu przeczytaj [przebieg pracy](docs/workflow.md) i [granice uprawnień](docs/authorization.md).
-2. Wybierz konkretny commit standardu i przygotuj
-   [profil projektu](templates/project-profile.md).
-3. Zastosuj [instrukcję wdrożenia standardu](docs/adoption.md).
-4. Sprawdź rezultat według [zasad weryfikacji](docs/verification.md).
-5. Oceń pierwsze zadania przy użyciu [scenariuszy pilotażu](docs/pilot.md).
-
 ## Co jest gdzie
 
 | Materiał | Odpowiedzialność |
@@ -159,7 +170,8 @@ i otwórz nowe okno PowerShella.
 Katalog `skills/` jest wspólnym źródłem procedur i pluginu. Samo sklonowanie
 repozytorium nie instaluje skilli. Instalację opisuje [instrukcja](docs/plugin-installation.md),
 a zastosowanie w projektach [adopcja](docs/adoption.md).
-Rzeczywisty wynik instalacji i wykrywania skilli opisuje [odbiór](docs/plugin-verification.md).
+[Historyczny odbiór instalacji pluginu 0.1.0](docs/plugin-verification.md) opisuje
+instalację i wykrywanie skilli z poprzedniego repozytorium.
 
 ## Zasady projektowania
 
@@ -170,14 +182,6 @@ Rzeczywisty wynik instalacji i wykrywania skilli opisuje [odbiór](docs/plugin-v
 - Instrukcje wspierają wykonanie; kontrole CI i ustawienia repozytorium egzekwują
   wybrane wymagania technicznie.
 - Standard nie nadaje uprawnień do cudzych systemów ani do produkcji.
-
-## Rozwój v0.2
-
-Pierwszy pilotaż powinien objąć małą poprawkę, funkcję z testami i zmianę
-wymagającą analizy migracji. Wnioski trafiają do PR zmieniającego standard.
-Pakiet pluginu jest częścią repozytorium. Konfiguracja ochrony main, gotowy
-template repozytorium i publikacja wydania pozostają odrębnymi zadaniami. Obecne szablony są pojedynczymi materiałami,
-a nie kompletnym generatorem projektu.
 
 ## Weryfikacja repozytorium
 
@@ -195,10 +199,10 @@ W tym repozytorium nie skonfigurowano GitHub Actions. Powyższe kontrole
 uruchamiaj lokalnie. Po commicie sprawdź cały zakres PR poleceniem
 `git diff --check origin/main...HEAD` względem aktualnej bazy i podaj wyniki w PR.
 
-Walidacja struktury nie potwierdza skuteczności workflow ani zachowania modelu.
-Katalog przypadków i przebiegi na żądanie opisuje [ewaluacja](evals/README.md),
-a zakres wykonanych prób [raport](docs/pilot-2026-11-02.md).
-Do tego służy pilotaż; jego wyników nie należy deklarować przed wykonaniem.
+Zachowanie agenta sprawdza się osobno. [Instrukcja ewaluacji](evals/README.md)
+opisuje przypadki i sposób przeprowadzenia prób.
+[Raport z pilotażu z 2 listopada 2026](docs/pilot-2026-11-02.md) dokumentuje
+próby wcześniejszej wersji standardu w jednorazowych repozytoriach testowych.
 
 ## Źródła techniczne
 
