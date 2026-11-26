@@ -23,6 +23,15 @@ Doprowadź autoryzowany zakres do sprawdzalnego rezultatu.
    Przed edycją C# przeczytaj [zasady formatowania](references/csharp-formatting.md).
    Stosuj je tam, gdzie projekt nie określa własnej reguły.
    Utrzymuj jedno źródło każdej decyzji. ADR dodaj dla istotnego trwałego wyboru.
+   Jako koordynator możesz rozdzielić niezależne edycje i testy, gdy delegowanie
+   jest dostępne i dozwolone. Każdemu przekaż cel, zakres plików do edycji,
+   wspólną wersję kontraktu i kryterium odbioru. Zadbaj o jednego wykonawcę
+   dla każdego wspólnego pliku. Gdy kontrakt dopiero powstaje, potwierdź go
+   na działającym fragmencie przed rozpoczęciem zależnych prac. Gdy się zmienia,
+   wstrzymaj zależne prace do uzgodnienia i przekazania nowej wersji wykonawcom.
+   Drobne i ściśle zależne zmiany wykonuj samodzielnie, podobnie jak przy braku
+   możliwości delegowania. Po przerwaniu podzadania sprawdź stan plików i wyników,
+   zanim wznowisz pracę.
 4. Nowy istotny konflikt wymagań lub rozszerzenie zakresu przekaż właścicielowi.
    Kontynuuj niezależną pracę. Nie pytaj ponownie o rutynowe czynności już
    objęte zgodą.
@@ -38,6 +47,10 @@ Doprowadź autoryzowany zakres do sprawdzalnego rezultatu.
    uruchomionej wersji i trwałość zapisu, gdy dotyczą kryteriów.
    Jeśli test jednostkowy nie potwierdza, że aplikacja wywołuje zmieniony kod,
    sprawdź zachowanie przez punkt wejścia używany przez użytkownika lub inny system.
+   Połącz wyniki wykonawców, sprawdź wersje, z których pochodzą dowody, i zweryfikuj
+   współdziałanie na połączonej wersji. Przykładowo, po równoległym napisaniu testów
+   API i formularza powtórz zapis przez formularz z rzeczywistym API. Sprawdź
+   odpowiedź serwera, zachowanie formularza i stan zapisanych danych.
 7. Wykonaj self-review diffu względem bazy. Sprawdź regresje, przypadkowe pliki,
    sekrety, dokumentację i niewykonane kontrole. Oceń również usunięte asercje,
    pominięte testy, wyłączone reguły i obniżone progi. Nie osłabiaj kontroli

@@ -20,6 +20,10 @@ Zmianę źródła istniejącej instalacji opisuje
   standardu i reguły swojego repozytorium. Weź pod uwagę [przebieg pracy](docs/workflow.md)
   i [zakres uprawnień](docs/authorization.md).
 
+Przy większym zadaniu agent prowadzący może rozdzielić analizę, testy lub review
+między subagentów i połączyć ich wyniki. Warunki podziału i rolę koordynatora
+opisuje [praca z subagentami](docs/workflow.md#praca-z-subagentami).
+
 W pierwszym [pilotażu](docs/pilot.md) możesz wypróbować standard na małej poprawce,
 funkcji z testami i zmianie wymagającej analizy migracji. Oceń wyniki według
 [zasad weryfikacji](docs/verification.md).

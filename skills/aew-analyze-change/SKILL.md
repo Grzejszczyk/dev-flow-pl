@@ -8,6 +8,22 @@ description: "Przeanalizuj planowaną zmianę oprogramowania przed implementacj�
 Przedstaw analizę pozwalającą właścicielowi podjąć decyzję o realizacji.
 Skill analityczny sam nie udziela zgody na edycję.
 
+## Rozpoznanie i pytania uzupełniające
+
+Przy prostej sprawie, silnej zależności między pytaniami albo niedostępności
+subagentów przeprowadź analizę samodzielnie. Gdy odrębne pytania można badać
+równolegle i środowisko pozwala na delegowanie, przydziel je subagentom w granicach
+zlecenia. Każdemu podaj pytanie, źródła i wersję oraz oczekiwany wynik wraz
+z dowodem i niewiadomymi. Przy poleceniu analizy wszyscy pracują tylko do odczytu.
+
+Zestaw ustalenia. Jeśli nowe odkrycie lub sprzeczność może zmienić rekomendację,
+zakres albo kryteria akceptacji, sformułuj pytanie wynikające z konkretnych
+dowodów. Skieruj je do subagenta, który badał ten obszar. Wybierz innego,
+gdy potrzebujesz niezależnego sprawdzenia lub wiedzy z innej części projektu.
+Pracując samodzielnie, sprawdź to pytanie bezpośrednio u źródła. Zamknij wątek,
+gdy możesz uzasadnić wniosek, określić brakujący dowód i jego znaczenie lub
+wskazać decyzję należącą do właściciela. Połącz ustalenia w jedną odpowiedź.
+
 ## Wykonanie
 
 1. Ustal problem, docelowe repozytorium, lokalne instrukcje i aktualny stan.

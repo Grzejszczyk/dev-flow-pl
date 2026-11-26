@@ -18,6 +18,24 @@ commitu po każdym kroku. Istotne, niepewne użycie API weryfikuj w oficjalnym
 źródle właściwym dla wersji zależności ustalonej w projekcie. Brak potwierdzenia
 jest ograniczeniem, nie wynikiem pozytywnym.
 
+## Praca z subagentami
+
+Jeden agent prowadzi zadanie i odpowiada za wynik. Może przydzielić subagentom
+odrębne pytania lub rozłączne zakresy edycji, gdy zadanie i środowisko na to
+pozwalają. Każdemu wskazuje cel, źródła i wersję, zakres uprawnień, oczekiwany
+rezultat i sposób sprawdzenia. Przy małej poprawce, zależnych krokach lub braku
+obsługi subagentów kontynuuje sam. Gotowe, niezależne komendy może uruchomić
+równolegle bez angażowania dodatkowych agentów.
+
+Subagent przekazuje ustalenie albo zmianę wraz z dowodem i istotną niewiadomą.
+Koordynator porównuje wyniki. Gdy jedno odkrycie zmienia zakres innego, kieruje
+do wykonawcy pytanie uzupełniające lub sam sprawdza źródło. Rozstrzygnięcie
+produktowe przekazuje właścicielowi w ramach istniejących zasad projektu.
+Przy edycjach wyznacza jednego wykonawcę dla wspólnych plików. Zmianę kontraktu
+przekazuje zainteresowanym przed wznowieniem zależnej pracy. Przy przerwaniu
+podzadania ustala, co już wykonano, i kończy je sam lub przekazuje dalej.
+Weryfikuje zachowanie po połączeniu zmian i przedstawia jeden wynik użytkownikowi.
+
 ## Etapy i warunki przejścia
 
 | Etap | Wynik umożliwiający przejście dalej |
