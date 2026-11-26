@@ -47,6 +47,20 @@ Surowe ślady i wyniki przechowuj lokalnie w .local/evals/ (katalog ignorowany).
 Do repozytorium mogą trafić jedynie sprawdzone podsumowania syntetycznych prób,
 z dowodami dostępnymi oceniającemu i jawnymi ograniczeniami.
 
+## Porównanie pracy jednego agenta i zespołu
+
+Uruchom warianty w świeżych sesjach na osobnych kopiach tej samej bazy. W obu
+zachowaj model, polecenie, dostęp do źródeł, kryteria i odpowiedzi właściciela.
+Zmieniaj sposób wykonania zadania. Zapisz, czy host rzeczywiście udostępnił
+delegowanie i czy koordynator z niego skorzystał. Przy próbie pytań uzupełniających
+zachowaj pierwsze ustalenia, nowe pytanie, odpowiedź i jej wpływ na końcowy wniosek.
+
+Różne przypadki mogą równolegle wykonywać osobni agenci, każdy na własnej kopii
+i z instrukcją badanego skilla. Oceniający przechowuje kryteria i wzorcowe
+odpowiedzi oddzielnie. Koordynator przypisuje wyniki i pominięcia do przypadku
+i wersji. Porównaj czas do sprawdzonego wyniku, łączny koszt wszystkich agentów
+lub dostępne dane o tokenach, przeróbki i jakość. Opisz brakujące pomiary.
+
 ## Dobór skilla a przestrzeganie procedury
 
 Jawne podanie SKILL.md sprawdza zachowanie po jego wczytaniu.

@@ -1,6 +1,6 @@
 # Plan wprowadzenia pracy z subagentami do dev-flow
 
-Propozycja do review. Celem jest skrócenie drogi do zweryfikowanego wyniku lub
+Plan zaakceptowany do realizacji w PR #7. Celem jest skrócenie drogi do zweryfikowanego wyniku lub
 wykrycie istotnego pominięcia przy akceptowalnym koszcie. Zadanie nadal prowadzi
 jeden koordynator. Poniższe etapy opisują przyszłe zmiany w standardzie i skillach.
 

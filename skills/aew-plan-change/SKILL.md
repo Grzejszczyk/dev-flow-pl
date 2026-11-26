@@ -22,6 +22,13 @@ description: "Przygotuj plan implementacji na podstawie rozmowy, analizy i uzgod
 3. Ułóż kroki według zależności. Przy każdym wskaż zakres prac, oczekiwany
    rezultat i sposób jego sprawdzenia. Powiąż kontrole z kryteriami akceptacji.
    Uwzględnij migrację lub odzyskanie danych, gdy wymaga tego zmiana.
+   Przy podziale pracy wskaż, co musi być gotowe przed kolejnym krokiem, kto
+   odpowiada za wspólny kontrakt i kiedy sprawdzisz wynik po połączeniu prac.
+   Przykładowo, gdy API dopiero powstaje, zaplanuj mały działający fragment
+   backendu potwierdzający żądanie, odpowiedź sukcesu i istotny błąd. Frontend
+   może w tym czasie rozwijać część niezależną od API. Po ustaleniu kontraktu
+   obie strony i ich testy mogą powstawać równolegle. Przy małej zmianie,
+   silnych zależnościach lub braku możliwości delegowania zaplanuj jednego wykonawcę.
 4. Domyślnie zapisz plan w pliku Markdown w repozytorium. Użyj ścieżki
    uzgodnionej w rozmowie lub dobierz nazwę do tematu i konwencji projektu.
    Jeśli analiza i plan mają wspólny dokument, dodaj sekcję, zachowując

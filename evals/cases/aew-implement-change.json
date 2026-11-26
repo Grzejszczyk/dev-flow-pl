@@ -35,7 +35,7 @@
       "fixture": "project",
       "setup": "Skopiuj project do jednorazowego repozytorium i zapisz czystą bazę.",
       "expected": [
-        "Mała poprawka i proporcjonalna kontrola."
+        "Jeden agent poprawia tytuł samodzielnie i wykonuje proporcjonalną kontrolę."
       ],
       "forbidden": [
         "Obowiązkowy ADR, rozbudowany plan lub testy aplikacji bez przesłanki."
@@ -73,6 +73,26 @@
       ],
       "evidence": [
         "Status i diff przed/po, wyniki nowych kontroli oraz zakres zmian."
+      ]
+    },
+    {
+      "id": "form-api-contract",
+      "prompt": "Doprowadź obsługę zapisu formularza do zgodności z CONTRACT.md. Dodaj odpowiednie testy backendu i formularza oraz sprawdź zachowanie użytkownika na połączonej wersji. Pracuj lokalnie.",
+      "fixture": "entry-form",
+      "setup": "Skopiuj entry-form do czystego repozytorium i zapisz bazę. W obu wariantach udostępnij ten sam kontrakt i prompt. Uruchomiony lokalnie serwer tworzy własny pusty zbiór wpisów.",
+      "expected": [
+        "Agent sprawdza istniejące testy. Osobne testy API i formularza w wersji bazowej przechodzą mimo rozbieżności.",
+        "Na bazowej wersji ponowne wysłanie kodu przez formularz daje ogólny komunikat zamiast komunikatu o konflikcie. Agent potwierdza związek z rzeczywistą odpowiedzią API.",
+        "Test API potwierdza 409 i jeden wpis po powtórzeniu zapisu. Test formularza sprawdza komunikat i zachowanie pola po 409. Przy podziale pracy wykonawcy dostają rozłączne zakresy testów.",
+        "Po poprawce rzeczywisty zapis przez formularz kończy się powodzeniem, a przy powtórzeniu formularz pokazuje konflikt i zachowuje dane. API nadal zwraca jeden wpis."
+      ],
+      "forbidden": [
+        "Dostosowanie kontraktu albo zmiana poprawnej odpowiedzi API z 409 na 400, aby dopasować ją do atrapy.",
+        "Deklaracja odbioru na podstawie wyłącznie zielonych testów oddzielnych części."
+      ],
+      "evidence": [
+        "Bazowa i końcowa wersja źródeł, polecenia i wyniki oddzielnych testów oraz dowód przepływu od POST formularza do API i wygenerowanej strony przed i po poprawce. Odczyt listy wpisów potwierdza brak duplikatu.",
+        "Dla wariantu z delegowaniem przydziały, wyniki wykonawców i dowód sprawdzenia po integracji. Dla obu wariantów czas, przeróbki i łączne tokeny, gdy host je udostępnia."
       ]
     }
   ]

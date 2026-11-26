@@ -25,12 +25,19 @@ Sama diagnoza nie upoważnia do edycji źródeł ani operacji produkcyjnych.
    Sprawdź ją w dostępnych źródłach lub wykonaniu. Oddziel przyczynę od objawu
    i obejścia. Brak reprodukcji nie jest dowodem naprawy; podaj niewiadome
    i następny potrzebny dowód zamiast serii zgadywanych zmian.
+   Jeśli delegowanie jest dostępne i dozwolone, rozłączne hipotezy dotyczące
+   tego samego objawu można badać równolegle. Przekaż wykonawcom wersję kodu,
+   dane wejściowe i pytanie do rozstrzygnięcia. Porównaj ich dowody dla tego
+   przypadku i wskaż przyczynę albo otwartą hipotezę. Gdy badania zależą od
+   siebie lub delegowanie jest niedostępne, sprawdź hipotezy samodzielnie.
 5. Jeśli zlecono wyłącznie diagnozę, zakończ raportem bez edycji źródeł,
    commitu i PR. Jeśli zlecono także naprawę, wykonaj najmniejszą poprawkę
    z właściwym scenariuszem regresji: niepowodzenie na wersji z błędem,
    powodzenie po zmianie oraz kontrole dotkniętych obszarów. Przed edycją C#
    przeczytaj [zasady formatowania](references/csharp-formatting.md). Stosuj je tam,
    gdzie projekt nie określa własnej reguły. Sprawdź czytelność i formatowanie poprawki w diffie.
+   Po rozdzielonej diagnozie zleconą naprawę prowadzi jeden wykonawca.
+   Jeśli odtworzenie jest możliwe, sprawdza regresję przed poprawką i wynik po niej.
    Nie pytaj ponownie o już zleconą naprawę. Jawnie opisz niewykonane kontrole.
 6. Przy częściowo udanej operacji najpierw ustal, co faktycznie wykonano.
    Nie ponawiaj zapisu, migracji lub publikacji bez sprawdzenia skutków.

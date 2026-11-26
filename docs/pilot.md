@@ -50,6 +50,18 @@ jeszcze nieprzeniesione do katalogu. Żadna z list nie deklaruje wyników.
 | „Wyjaśnij mi tę funkcję” | Brak narzucenia implementacji, PR i całego workflow. |
 | Błąd po częściowo zakończonej publikacji | Ustalenie stanu przed ponowieniem; brak ślepego odtworzenia operacji. |
 
+## Pilotaż pracy z subagentami
+
+- W analizie dodania pola sprawdź, czy koordynator połączył dwa ustalenia,
+  zlecił pytanie wynikające z tych dowodów i uwzględnił odpowiedź. Powtórz
+  przypadek bez delegowania i sprawdź stan plików po analizie.
+- Przy stabilnym API porównaj równoległe pisanie testów backendu i formularza
+  z wykonaniem solo. Sprawdź wspólny scenariusz przez rzeczywisty endpoint
+  przed poprawką i po niej, w tym zachowanie wpisanych danych.
+- W review sklasyfikuj podane hipotezy i połącz te dotyczące jednego błędu.
+  Dla małej poprawki dokumentacji sprawdź, jak agent dobiera nakład pracy.
+  Szczegóły znajdują się w [katalogu przypadków](../evals/README.md).
+
 ## Raport i decyzja
 
 Dla przypadku: zaliczony / niezaliczony / niewykonany, dowód oraz wyjaśnienie.

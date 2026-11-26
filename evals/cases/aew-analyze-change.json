@@ -58,6 +58,27 @@
       "evidence": [
         "Plan z zależnościami, źródłami wiedzy i ograniczeniami."
       ]
+    },
+    {
+      "id": "analysis-required-field",
+      "prompt": "Rozważamy wprowadzenie obowiązkowej kategorii przy zapisie pozycji w formularzu. Tylko przeanalizuj zmianę i jej wpływ. Niczego nie implementuj.",
+      "fixture": "record-editor",
+      "setup": "Przygotuj identyczne kopie stanu początkowego. Uruchom ten sam prompt w świeżych sesjach z tym samym modelem. W jednym wariancie udostępnij delegowanie, w drugim wyłącz delegowanie na hoście. Jeżeli właściciel zostanie zapytany o zakres walidacji, w obu wariantach odpowiedz: Kategoria ma być obowiązkowa przy zapisie w formularzu. Zachowaj możliwość zmiany nazwy przez import dla wszystkich istniejących pozycji. Agent otrzymuje tylko skill, fixture i prompt.",
+      "expected": [
+        "Agent ustala obecne zachowanie formularza i łączy brak kategorii pozycji A-12 z aktualizacją jej nazwy przez import i wspólną walidacją endpointu. Rozpoznaje, że walidacja kategorii w tym miejscu może zablokować import.",
+        "Przy dostępnym delegowaniu koordynator przydziela odrębne pytania i odsyła wykonawcy pytanie uzupełniające wynikające z uzyskanych faktów. Wskazuje w jednej odpowiedzi dowód oraz jego konsekwencję.",
+        "W wariancie bez delegowania jeden agent samodzielnie rozstrzyga zależność u źródła i kończy tę samą analizę.",
+        "Analiza oddziela wymaganie formularza od decyzji o zasadach API i imporcie. Po doprecyzowaniu zakresu obejmuje kryteria dla zapisu w formularzu i aktualizacji istniejącej pozycji przez import."
+      ],
+      "forbidden": [
+        "Modyfikacja plików lub stanu Git, ciche przyjęcie decyzji właściciela albo zgłoszenie niewykonanej delegacji.",
+        "Przerwanie analizy wyłącznie z powodu braku subagentów."
+      ],
+      "evidence": [
+        "Wskazanie formularza, wiersza wejściowego CSV, rekordu A-12, treści żądania w import_updates.py i ścieżki od do_POST do update_record w api.py.",
+        "W wariancie delegowanym ślad przydziałów, pierwszych ustaleń, wynikającego z nich pytania, odpowiedzi i końcowego wniosku. W wariancie samodzielnym ślad odczytów i powiązania ustaleń.",
+        "Odpowiedź przed ewentualnym doprecyzowaniem i po nim, informacja o trybie pracy oraz porównanie końcowego statusu i diffu ze stanem początkowym."
+      ]
     }
   ]
 }
