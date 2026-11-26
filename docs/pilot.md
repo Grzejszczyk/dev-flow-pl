@@ -82,6 +82,9 @@ Mała próbka daje materiał do poprawy, a nie dowód ogólnego wzrostu produkty
 
 ## Wykonane próby
 
+[Raport z 2026-11-26](pilot-2026-11-26.md) zawiera porównanie samodzielnych
+i zespołowych przebiegów analizy, testów formularza z API i review.
+
 [Raport z 2026-11-02](pilot-2026-11-02.md) rozdziela kontrolowane próby autora,
 niezależne przebiegi i niewykonane kontrole. Obecność przypadku w katalogu
 nie oznacza jego zaliczenia. Automatyczny runner jest dalszym etapem.

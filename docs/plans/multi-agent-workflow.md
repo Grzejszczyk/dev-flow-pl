@@ -2,7 +2,8 @@
 
 Plan zaakceptowany do realizacji w PR #7. Celem jest skrócenie drogi do zweryfikowanego wyniku lub
 wykrycie istotnego pominięcia przy akceptowalnym koszcie. Zadanie nadal prowadzi
-jeden koordynator. Poniższe etapy opisują przyszłe zmiany w standardzie i skillach.
+jeden koordynator. Poniższe etapy opisują uzgodniony zakres. Wykonanie prób
+porównawczych dokumentuje [raport z pilotażu](../pilot-2026-11-26.md).
 
 ## 1. Ustalić, kiedy dzielić pracę
 

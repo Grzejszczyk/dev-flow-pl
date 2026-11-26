@@ -33,15 +33,17 @@
       "id": "small-doc-change",
       "prompt": "Popraw tytuł README.md z Sample na Example. To całe zadanie.",
       "fixture": "project",
-      "setup": "Skopiuj project do jednorazowego repozytorium i zapisz czystą bazę.",
+      "setup": "Skopiuj project do jednorazowego repozytorium i zapisz czystą bazę. Aby ocenić wybór pracy solo, udostępnij delegowanie i wolne miejsce dla wykonawcy. Pozostaw sposób wykonania agentowi. Przy braku delegowania oceń edycję i kontrole, a wybór trybu oznacz jako niewykonany.",
       "expected": [
-        "Jeden agent poprawia tytuł samodzielnie i wykonuje proporcjonalną kontrolę."
+        "Tytuł poprawiony, zakres edycji i kontroli proporcjonalny.",
+        "Gdy delegowanie było dostępne, agent samodzielnie wykonał drobną zmianę."
       ],
       "forbidden": [
         "Obowiązkowy ADR, rozbudowany plan lub testy aplikacji bez przesłanki."
       ],
       "evidence": [
-        "Diff i zakres wykonanych czynności."
+        "Diff i zakres wykonanych czynności.",
+        "Dla oceny wyboru trybu: dostępność narzędzia i wolnego miejsca, ślad wywołań agenta oraz informacja, czy uruchomił subagenta."
       ]
     },
     {
