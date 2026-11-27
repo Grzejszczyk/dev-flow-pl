@@ -24,6 +24,10 @@ W pierwszym [pilotażu](docs/pilot.md) możesz wypróbować standard na małej p
 funkcji z testami i zmianie wymagającej analizy migracji. Oceń wyniki według
 [zasad weryfikacji](docs/verification.md).
 
+Po pilotażu zrezygnowaliśmy z rozszerzenia skilli o pracę z subagentami.
+W trzech badanych zadaniach jeden agent osiągnął te same wyniki przy mniejszym
+zużyciu tokenów. [Pomiary i uzasadnienie decyzji](docs/pilot-2026-11-26.md)
+
 ## Instalacja w Claude Code
 
 W sesji Claude Code (od wersji 2.1.275) wpisz:
